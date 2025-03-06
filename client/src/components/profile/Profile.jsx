@@ -16,7 +16,7 @@ const Profile = () => {
   useEffect(function() {
     async function fetchUser() {
       try {
-        const res = await axios.get("https://amazonclone-sp.herokuapp.com/api/getAuthUser", {
+        const res = await axios.get("http://localhost:8000/api/getAuthUser", {
           withCredentials: true
         })
   
