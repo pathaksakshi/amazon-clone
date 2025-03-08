@@ -16,7 +16,7 @@ const Profile = () => {
   useEffect(function() {
     async function fetchUser() {
       try {
-        const res = await axios.get("http://localhost:8000/api/getAuthUser", {
+        const res = await axios.get("http://65.0.71.236:8000/api/getAuthUser", {
           withCredentials: true
         })
   

@@ -22,7 +22,7 @@ const Slider = (props) => {
   useEffect(function() {
     async function fetchProducts() {
       try {
-        const res = await axios.get('http://localhost:8000/api/products');
+        const res = await axios.get('http://65.0.71.236:8000/api/products');
         setProducts(res.data);
         setIsLoading(false);
       } catch (error) {
