@@ -36,7 +36,7 @@ This is a clone of the well-known e-commerce website Amazon. Customers can brow
 
 ## Demo Link 🌐
 
-http://15.207.196.48:8000/
+http://15.207.195.16:8000/
 
 
 ## To start the server 👨‍💻
@@ -46,7 +46,7 @@ npm install
 nodemon
 ```
 
-The server is now running at http://15.207.196.48:8000/
+The server is now running at http://15.207.195.16:8000/
 
 ## To start the client 👩‍💻
 

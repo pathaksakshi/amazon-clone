@@ -1,27 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import Loader from '../loader/Loader';
-import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import Loader from "../loader/Loader";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const SignIn = () => {
-
   // Loader
   const [isLoading, setIsLoading] = useState(true);
   const [showSignIn, setShowSignIn] = useState(true);
 
-  useEffect(function() {
+  useEffect(function () {
     async function fetchUser() {
       try {
-        const res = await axios.get("http://15.207.196.48:8000/api/getAuthUser", {
-          withCredentials: true
-        });
+        const res = await axios.get(
+          "http://15.207.195.16:8000/api/getAuthUser",
+          {
+            withCredentials: true,
+          }
+        );
 
         if (res) {
           setShowSignIn(false);
         }
       } catch (error) {
         if (error.response.data.message == "No token provided") {
-          
         } else {
           console.log(error);
         }
@@ -30,30 +31,32 @@ const SignIn = () => {
     }
 
     fetchUser();
-  }, [])
+  }, []);
 
   return (
     <>
-      
-      { isLoading ?
-      <Loader /> : 
-        showSignIn ? 
-        <div className='footer-signin'>
+      {isLoading ? (
+        <Loader />
+      ) : showSignIn ? (
+        <div className="footer-signin">
           <hr />
-          <div className='signin-wrapper'>
+          <div className="signin-wrapper">
             <p>See personalized recommendations</p>
-            <NavLink to='/login'>
+            <NavLink to="/login">
               <button>Sign in</button>
             </NavLink>
-            
-            <p>New customer? <NavLink to='/register'>Start here.</NavLink></p>
+
+            <p>
+              New customer? <NavLink to="/register">Start here.</NavLink>
+            </p>
           </div>
           <hr />
-        </div> :
+        </div>
+      ) : (
         ""
-      }
+      )}
     </>
-  )
-}
+  );
+};
 
 export default SignIn;
