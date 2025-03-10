@@ -21,7 +21,7 @@ const Slider = (props) => {
   useEffect(function () {
     async function fetchProducts() {
       try {
-        const res = await axios.get("http://15.207.195.16:8000/api/products");
+        const res = await axios.get("http://13.126.157.153:8000/api/products");
         setProducts(res.data);
         setIsLoading(false);
       } catch (error) {

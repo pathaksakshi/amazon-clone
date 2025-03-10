@@ -17,7 +17,7 @@ const Product = () => {
     async function fetchSingleProduct() {
       try {
         const res = await axios.get(
-          "http://15.207.195.16:8000/api/product/" + id
+          "http://13.126.157.153:8000/api/product/" + id
         );
         setProduct(res.data);
         setIsLoading(false);
@@ -35,7 +35,7 @@ const Product = () => {
   async function addToCart(id) {
     try {
       const res = await axios.post(
-        "http://15.207.195.16:8000/api/addtocart/" + id,
+        "http://13.126.157.153:8000/api/addtocart/" + id,
         {
           product,
         },
@@ -56,7 +56,7 @@ const Product = () => {
   const [userData, setUserData] = useState();
   async function fetchUser() {
     try {
-      const res = await axios.get("http://15.207.195.16:8000/api/getAuthUser", {
+      const res = await axios.get("http://13.126.157.153:8000/api/getAuthUser", {
         withCredentials: true,
       });
       if (res) {
@@ -93,7 +93,7 @@ const Product = () => {
           };
 
           const res = await axios.post(
-            "http://15.207.195.16:8000/api/create-order",
+            "http://13.126.157.153:8000/api/create-order",
             {
               amount: orderAmount + "00",
             },
@@ -104,7 +104,7 @@ const Product = () => {
 
           const { id, amount, currency } = res.data.order;
           const { key } = await axios.get(
-            "http://15.207.195.16:8000/api/get-razorpay-key"
+            "http://13.126.157.153:8000/api/get-razorpay-key"
           );
 
           var today = new Date();
@@ -123,7 +123,7 @@ const Product = () => {
             name: product.name,
             handler: async function (response) {
               const result = await axios.post(
-                "http://15.207.195.16:8000/api/pay-order",
+                "http://13.126.157.153:8000/api/pay-order",
                 {
                   orderedProducts: orderedProducts,
                   dateOrdered: date,

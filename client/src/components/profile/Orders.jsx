@@ -19,7 +19,7 @@ const Orders = () => {
     async function fetchUser() {
       try {
         const res = await axios.get(
-          "http://15.207.195.16:8000/api/getAuthUser",
+          "http://13.126.157.153:8000/api/getAuthUser",
           {
             withCredentials: true,
           }

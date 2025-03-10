@@ -44,7 +44,7 @@ const Navbar = () => {
     async function fetchUser() {
       try {
         const res = await axios.get(
-          "http://15.207.195.16:8000/api/getAuthUser",
+          "http://13.126.157.153:8000/api/getAuthUser",
           {
             withCredentials: true,
           }
@@ -84,7 +84,7 @@ const Navbar = () => {
 
     // Fetching products
     async function fetchProducts() {
-      const res = await axios.get("http://15.207.195.16:8000/api/products");
+      const res = await axios.get("http://13.126.157.153:8000/api/products");
       setProducts(res.data);
     }
 
@@ -96,7 +96,7 @@ const Navbar = () => {
   // Logout
   function logout() {
     try {
-      const res = axios.get("http://15.207.195.16:8000/api/logout", {
+      const res = axios.get("http://13.126.157.153:8000/api/logout", {
         withCredentials: true,
       });
 

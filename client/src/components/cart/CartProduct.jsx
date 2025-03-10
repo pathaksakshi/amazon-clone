@@ -14,7 +14,7 @@ const CartProduct = (props) => {
   async function deleteFromCart() {
     try {
       const res = await axios.delete(
-        "http://15.207.195.16:8000/api/delete/" + product.id,
+        "http://13.126.157.153:8000/api/delete/" + product.id,
         {
           withCredentials: true,
         }

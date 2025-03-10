@@ -18,7 +18,7 @@ const Cart = () => {
 
   useEffect(() => {
     axios
-      .get("http://15.207.195.16:8000/api/getAuthUser", {
+      .get("http://13.126.157.153:8000/api/getAuthUser", {
         withCredentials: true,
       })
       .then(function (res) {
@@ -63,7 +63,7 @@ const Cart = () => {
     script.onload = async () => {
       try {
         const res = await axios.post(
-          "http://15.207.195.16:8000/api/create-order",
+          "http://13.126.157.153:8000/api/create-order",
           {
             amount: orderAmount + "00",
           },
@@ -74,7 +74,7 @@ const Cart = () => {
 
         const { id, amount, currency } = res.data.order;
         const { key } = await axios.get(
-          "http://15.207.195.16:8000/api/get-razorpay-key"
+          "http://13.126.157.153:8000/api/get-razorpay-key"
         );
 
         var today = new Date();
@@ -93,7 +93,7 @@ const Cart = () => {
           name: "Payment",
           handler: async function (response) {
             const result = await axios.post(
-              "http://15.207.195.16:8000/api/pay-order",
+              "http://13.126.157.153:8000/api/pay-order",
               {
                 orderedProducts: orderedProducts,
                 dateOrdered: date,

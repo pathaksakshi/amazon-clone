@@ -36,7 +36,7 @@ const SignUp = () => {
 
     try {
       const res = await axios.post(
-        "http://15.207.195.16:8000/api/register",
+        "http://13.126.157.153:8000/api/register",
         {
           name,
           number,
